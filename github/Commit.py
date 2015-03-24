@@ -130,10 +130,10 @@ class Commit(github.GithubObject.CompletableGithubObject):
         :param position: integer
         :rtype: :class:`github.CommitComment.CommitComment`
         """
-        assert isinstance(body, (str, unicode)), body
-        assert line is github.GithubObject.NotSet or isinstance(line, (int, long)), line
-        assert path is github.GithubObject.NotSet or isinstance(path, (str, unicode)), path
-        assert position is github.GithubObject.NotSet or isinstance(position, (int, long)), position
+        assert isinstance(body, str), body
+        assert line is github.GithubObject.NotSet or isinstance(line, int), line
+        assert path is github.GithubObject.NotSet or isinstance(path, str), path
+        assert position is github.GithubObject.NotSet or isinstance(position, int), position
         post_parameters = {
             "body": body,
         }
@@ -158,9 +158,9 @@ class Commit(github.GithubObject.CompletableGithubObject):
         :param description: string
         :rtype: :class:`github.CommitStatus.CommitStatus`
         """
-        assert isinstance(state, (str, unicode)), state
-        assert target_url is github.GithubObject.NotSet or isinstance(target_url, (str, unicode)), target_url
-        assert description is github.GithubObject.NotSet or isinstance(description, (str, unicode)), description
+        assert isinstance(state, str), state
+        assert target_url is github.GithubObject.NotSet or isinstance(target_url, str), target_url
+        assert description is github.GithubObject.NotSet or isinstance(description, str), description
         post_parameters = {
             "state": state,
         }

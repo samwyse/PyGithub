@@ -26,7 +26,7 @@
 
 import datetime
 
-import Framework
+from . import Framework
 
 
 class RateLimiting(Framework.TestCase):

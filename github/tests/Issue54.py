@@ -25,7 +25,7 @@
 
 import datetime
 
-import Framework
+from . import Framework
 
 
 class Issue54(Framework.TestCase):

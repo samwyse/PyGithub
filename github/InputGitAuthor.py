@@ -35,9 +35,9 @@ class InputGitAuthor(object):
         :param date: string
         """
 
-        assert isinstance(name, (str, unicode)), name
-        assert isinstance(email, (str, unicode)), email
-        assert isinstance(date, (str, unicode)), date  # @todo Datetime?
+        assert isinstance(name, str), name
+        assert isinstance(email, str), email
+        assert isinstance(date, str), date  # @todo Datetime?
         self.__name = name
         self.__email = email
         self.__date = date

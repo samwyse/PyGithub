@@ -25,7 +25,7 @@
 #                                                                              #
 # ##############################################################################
 
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 import github.GithubObject
 
@@ -76,8 +76,8 @@ class Label(github.GithubObject.CompletableGithubObject):
         :param color: string
         :rtype: None
         """
-        assert isinstance(name, (str, unicode)), name
-        assert isinstance(color, (str, unicode)), color
+        assert isinstance(name, str), name
+        assert isinstance(color, str), color
         post_parameters = {
             "name": name,
             "color": color,
@@ -91,7 +91,7 @@ class Label(github.GithubObject.CompletableGithubObject):
 
     @property
     def _identity(self):
-        return urllib.quote(self.name)
+        return urllib.parse.quote(self.name)
 
     def _initAttributes(self):
         self._color = github.GithubObject.NotSet
